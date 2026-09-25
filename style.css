@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Enables a smooth glide when clicking navigation links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navigation Bar Styling */
+nav {
+    background-color: #1a252f; /* A slightly darker shade than your header */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the menu stays on top of other elements */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem 0;
+    gap: 3rem; /* Spaces out the links */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db; /* Changes color when hovered */
+}
+
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+section {
+    padding: 4rem 10%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #2c3e50;
+    color: white;
+}
+.profile-img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* This makes it a perfect circle */
+    object-fit: cover; /* Ensures the image doesn't stretch */
+    margin: 0 auto 2rem auto; /* Centers the image */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    margin-top: 1rem; /* Adds space above the button */
+    padding: 0.5rem 1.5rem;
+    background-color: #3498db; /* A bright, clickable blue */
+    color: white;
+    text-decoration: none; /* Removes the default underline */
+    border-radius: 5px; /* Rounds the edges */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Changes the button color slightly when hovered */
+.btn:hover {
+    background-color: #2980b9; 
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    /* Stack the navigation links vertically */
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    /* Reduce the massive padding on the header */
+    header {
+        padding: 3rem 1rem;
+    }
+
+    /* Shrink the main title slightly */
+    header h1 {
+        font-size: 2rem;
+    }
+
+    /* Reduce the padding on the sides of your sections */
+    section {
+        padding: 3rem 5%;
+    }
+}
