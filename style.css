@@ -1,156 +1,198 @@
-/* Creates the fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Applies the animation to your main content */
-section, header {
-    animation: fadeIn 1s ease-out forwards;
-}
-
+/* Reset & Base Settings */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 body {
-    background-color: #f4f4f9;
-    color: #333;
-    line-height: 1.6;
+    background-color: #e22028; /* Deep charcoal, almost black */
+    color: #ffffff; /* Soft off-white for text */
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Enables a smooth glide when clicking navigation links */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Navigation Bar Styling */
-nav {
-    background-color: #1a252f; /* A slightly darker shade than your header */
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Ensures the menu stays on top of other elements */
-}
-
-nav ul {
-    list-style-type: none;
+/* Minimal Navigation */
+.minimal-nav {
     display: flex;
-    justify-content: center;
-    margin: 0;
-    padding: 1rem 0;
-    gap: 3rem; /* Spaces out the links */
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #3498db; /* Changes color when hovered */
-}
-
-header {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 4rem 2rem;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-section {
-    padding: 4rem 10%;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #2c3e50;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: flex-end;
+    padding: 2rem 5%;
     gap: 2rem;
 }
 
-.project-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+.minimal-nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
 }
 
-.project-card:hover {
-    transform: translateY(-5px);
+/* Minimalist Music Button */
+.music-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0;
 }
 
-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: #2c3e50;
-    color: white;
-}
-.profile-img {
-    display: block;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%; /* This makes it a perfect circle */
-    object-fit: cover; /* Ensures the image doesn't stretch */
-    margin: 0 auto 2rem auto; /* Centers the image */
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.music-btn:hover {
+    color: #ffffff;
 }
 
-/* Button Styling */
-.btn {
-    display: inline-block;
-    margin-top: 1rem; /* Adds space above the button */
-    padding: 0.5rem 1.5rem;
-    background-color: #3498db; /* A bright, clickable blue */
-    color: white;
-    text-decoration: none; /* Removes the default underline */
-    border-radius: 5px; /* Rounds the edges */
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+.minimal-nav a:hover {
+    color: #ffffff;
 }
 
-/* Changes the button color slightly when hovered */
-.btn:hover {
-    background-color: #2980b9; 
+/* Massive Hero Typography */
+.hero {
+    padding: 10vh 5% 5vh 5%;
+    border-bottom: 1px solid #ffff;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+/* The Work List (Index Style) */
+.work-list {
+    padding: 0 5%;
+}
+
+.work-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+    border-bottom: 1px solid #ffff;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.work-item:hover {
+    background-color: #161616;
+    padding-left: 2rem; /* Creates a smooth slide effect on hover */
+    padding-right: 2rem;
+}
+
+.work-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    flex: 1;
+}
+
+.work-number {
+    font-size: 0.9rem;
+    color: #ffff;
+}
+
+.work-item h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.work-desc {
+    flex: 1;
+    text-align: right;
+    color: #ffff;
+    font-size: 1.1rem;
+}
+
+/* Minimalist Footer */
+.minimal-footer {
+    padding: 4rem 5%;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ffff;
+    padding-top: 2rem;
+    color: #ffff;
+    font-size: 0.9rem;
+}
+
+.footer-grid a {
+    color: #e0e0e0;
+    text-decoration: none;
+}
+
+.footer-grid a:hover {
+    text-decoration: underline;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-    /* Stack the navigation links vertically */
-    nav ul {
+    .work-item {
         flex-direction: column;
+        align-items: flex-start;
         gap: 1rem;
-        padding: 1rem;
     }
+    .work-desc {
+        text-align: left;
+        margin-left: 3.2rem; /* Aligns text with the title, bypassing the number */
+    }
+    .work-item:hover {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
 
-    /* Reduce the massive padding on the header */
-    header {
-        padding: 3rem 1rem;
-    }
+/* Project Page Specifics */
+.project-header {
+    padding: 5vh 5% 5vh 5%;
+}
 
-    /* Shrink the main title slightly */
-    header h1 {
-        font-size: 2rem;
-    }
+.project-header h1 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    color: #ffffff;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
 
-    /* Reduce the padding on the sides of your sections */
-    section {
-        padding: 3rem 5%;
-    }
+.project-header p {
+    font-size: 1.2rem;
+    color: #ffff;
+    max-width: 600px;
+}
+
+/* Massive Image Gallery */
+.project-gallery {
+    padding: 0 5% 5rem 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Adds large gaps between images */
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+
+/* Slight highlight effect when hovering over an image */
+.gallery-img:hover {
+    opacity: 1; 
 }
