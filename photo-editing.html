@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="cursor" id="custom-cursor"></div>
     <nav class="minimal-nav">
         <a href="index.html">← Back to Home</a>
     </nav>
@@ -18,20 +19,20 @@
 
     <section class="project-gallery">
         <!-- Change 'photo-1.jpg' if your file name is different -->
-        <img src="Photo-edit-1.jpg" alt="Photo edit example 1" class="gallery-img">
+        <img src="photo-edit-1.jpg" alt="Photo edit example 1" class="gallery-img">
         
         <!-- Change 'photo-2.jpg' to your second image -->
-        <img src="Photo-edit-2.jpg" alt="Photo edit example 2" class="gallery-img">
+        <img src="photo-edit-2.jpg" alt="Photo edit example 2" class="gallery-img">
 
-        <img src="Photo-edit-3.jpg" alt="Photo edit example 3" class="gallery-img">
+        <img src="photo-edit-3.jpg" alt="Photo edit example 3" class="gallery-img">
 
-        <img src="Photo-edit-4.jpg" alt="Photo edit example 4" class="gallery-img">
+        <img src="photo-edit-4.jpg" alt="Photo edit example 4" class="gallery-img">
 
-        <img src="Photo-edit-5.jpg" alt="Photo edit example 5" class="gallery-img">
+        <img src="photo-edit-5.jpg" alt="Photo edit example 5" class="gallery-img">
 
-        <img src="Photo-edit-6.jpg" alt="Photo edit example 6" class="gallery-img">
+        <img src="photo-edit-6.jpg" alt="Photo edit example 6" class="gallery-img">
 
-        <img src="Photo-edit-7.jpg" alt="Photo edit example 7" class="gallery-img">
+        <img src="photo-edit-7.jpg" alt="Photo edit example 7" class="gallery-img">
     </section>
 
     <footer class="minimal-footer">
@@ -40,5 +41,19 @@
             <a href="mailto:koengahhmaed@gmail.com">koengahhmaed@gmail.com</a>
         </div>
     </footer>
+    <script>
+        const cursor = document.getElementById('custom-cursor');
+        const interactiveElements = document.querySelectorAll('a, button, .gallery-img, h1');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+    </script>
 </body>
 </html>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="cursor" id="custom-cursor"></div>
     <nav class="minimal-nav">
         <a href="index.html">← Back to Home</a>
     </nav>
@@ -38,5 +39,19 @@
             <a href="mailto:koengahhmaed@gmail.com">koengahhmaed@gmail.com</a>
         </div>
     </footer>
+    <script>
+        const cursor = document.getElementById('custom-cursor');
+        const interactiveElements = document.querySelectorAll('a, button, .gallery-img, h1');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hovered'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hovered'));
+        });
+    </script>   
 </body>
 </html>
